@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>BDSM</title>
+	</head>
+	<body>
+	  <div class="booth">
+	    <video width="400" height="300" autoplay></video>
+	    <canvas width="400" height="300" </canvas> 
+	  </div>
+	</body>
+	<script src="js/video.js"></script>
+</html>
