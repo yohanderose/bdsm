@@ -1,14 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<title>BDSM</title>
-	</head>
-	<body>
-	  <div class="booth">
-	    <video id="video" width="400" height="300" autoplay></video>
-	    <canvas id="canvas" width="400" height="300" </canvas> 
-	  </div>
-	</body>
-	<script src="js/video.js"></script>
+  <head>
+    <meta charset="UTF-8">
+    <title>BDSM</title>
+  </head>
+  <body>
+    <div class="booth">
+      <video id="video" width="400" height="300" autoplay></video>
+      <canvas id="canvas" width="400" height="300" </canvas> 
+	      </div>
+</body>
+<script>
+  (function() {
+  var canvas = document.getElementById('canvas'),
+  context = canvas.getContext('2d'),
+  video = document.getElementById('video');
+  vendorURL = window.URL || window.webkitURL;
+
+  navigator.getMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
+  navigator.getMedia({
+  video: true,
+  audio: false
+  }, function(stream) {
+  video.src = vendorURL.createObjectURL(stream);
+  video.play();
+  }, function(error) {
+  //Error occured!
+  });
+  
+  })();
+</script>
 </html>
